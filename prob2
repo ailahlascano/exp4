@@ -1,0 +1,56 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    int arr[100], a, b, c, size;
+    
+    cout << "Selection Sorting...\n";
+    cout << "Enter Array Size: ";
+    cin >> size;
+    cout << "Enter the " << size << " elements:\n";
+    
+    a=0;
+    while (a < size)
+    {
+        cin >> arr[a];
+        a++;
+    }
+    
+    cout << "\nYour data: ";
+    for (a = 0; a < size; a++)
+    {
+        cout << arr[a] << " ";
+    }
+    
+    a=0;
+    while (a < size)
+    {
+        b = a + 1;
+        while (b < size)
+        {
+            if (arr[a] > arr[b])
+            {
+                c = arr[a];
+                arr[a] = arr[b];
+                arr[b] = c;
+            }
+            b++;
+        }
+        a++;
+    }
+    
+    cout << "\n\nAfter using selection or bubble sort...";
+    cout << "\n\nSorted data: ";
+    
+    for (a = 0; a < size; a++)
+    {
+        cout << arr[a] << " ";
+    }
+    
+    return 0;
+    
+}
